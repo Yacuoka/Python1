@@ -1,0 +1,27 @@
+{% extends 'Sights/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<h1>Москва</h1>
+
+<div class="img">
+    <img src="{% static 'Sights/20.02.2014_ilya_melnikov_moskva_0.jpg' %}" alt="">
+</div>
+
+<h2>Главные достопримечательности Москвы </h2>
+
+<div class="block">
+    {% for project in projects %}
+    <div class="element">
+        <div><img src="{{ project.image.url }}" alt=""></div>
+        <div class="text">
+            <h2><a href="{{ project.url }}" target="_blank"><{{ projects.title }}</a></h2>
+            <p>{{ project.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
